@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALIVE IV Lounge - Booking</title>
+    <link rel="stylesheet" href="/css/homelayout.css">
+    <link rel="stylesheet" href="/css/formSheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-kZTMIvZJjoEly3s4zPoGOKs+IpEGyX9wfYt0l7Lu+2QvKZDpoTYkGtLxD0t0lBtPxt/W9XavukJptezH+1Q2+w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <ico></ico>
+
+</head>
+<body class="bkg">
+    
+    <nav>
+        <ul>
+          <li class="logo"><img src="/img/Alive-Lounge-Logo-transparent.png" width="20%"></li>
+          <li><a href= "/home.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li class="book-now"><a href="#"><button>Book Now</button></a></li>
+        </ul>
+      </nav>
+
+      <div class="formBackground">
+
+      <div class="booking-form-container">
+        <form class="booking-form" action="#" method="POST" onsubmit="return validateForm()">
+          <h2>Book a Session</h2>
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+          </div>
+          <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+          <div class="form-group">
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required>
+          </div>
+          <div class="form-group">
+            <label for="iv-type">Type of IV:</label>
+            <select id="iv-type" name="iv-type" required>
+              <option value="">-- Select an option --</option>
+              <option value="hydration-therapy">Hydration Therapy</option>
+              <option value="immune-boosting-therapy">Immune Boosting Therapy</option>
+              <option value="hangover-cure-therapy">Hangover Cure Therapy</option>
+            </select>
+          </div>
+          <!--
+          <div class="form-group">
+            <label for="message">Message (Optional):</label>
+            <textarea id="message" name="message"></textarea>
+          </div>
+        -->
+          <button class="btn" type="submit">Book Now</button>
+        </form>
+      </div>
+
+      <div class="reservation-box">
+        <h1>Make Your Reservation</h1>
+        <p>Thank you for choosing our services. Please fill out the form below to make a reservation.</p>
+      </div>
+
+      <script>
+        function validateForm() {
+          var name = document.forms["bookingForm"]["name"].value;
+          var email = document.forms["bookingForm"]["email"].value;
+          var phone = document.forms["bookingForm"]["phone"].value;
+          var date = document.forms["bookingForm"]["date"].value;
+          var time = document.forms["bookingForm"]["time"].value;
+        
+          if (name == "") {
+            alert("Name must be filled out");
+            return false;
+          }
+        
+          if (email == "") {
+            alert("Email must be filled out");
+            return false;
+          }
+        
+          if (phone == "") {
+            alert("Phone must be filled out");
+            return false;
+          }
+        
+          if (date == "") {
+            alert("Date must be filled out");
+            return false;
+          }
+        
+          if (time == "") {
+            alert("Time must be filled out");
+            return false;
+          }
+        }
+        </script>
+
+
+</div>
+    </body>
+
+    </html>
