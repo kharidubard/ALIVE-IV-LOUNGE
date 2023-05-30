@@ -69,7 +69,7 @@ body {
 }
 
 .homeImg {
-  background-image: url(img/orlandoUnsplah.jpg);
+  background-image: url(/img/orlandoUnsplah.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -323,7 +323,7 @@ nav {
 /*ABOUT SECTION*/
 
 .aboutWrapperBG {
-  background-image: url(img/nurseIVPouch.jpg);
+  background-image: url(/img/nurseIVPouch.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -422,7 +422,7 @@ nav {
 }
 
 .servicesWrapperBG {
-  background-image: url(img/womanRunningSteps-Unsplash.jpg);
+  background-image: url(/img/womanRunningSteps-Unsplash.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
