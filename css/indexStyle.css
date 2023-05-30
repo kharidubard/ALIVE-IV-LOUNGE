@@ -422,7 +422,7 @@ nav {
 }
 
 .servicesWrapperBG {
-  background-image: url('img/womanRunningSteps-Unsplash.jpg');
+  background-image: url(img/womanRunningSteps-Unsplash.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
