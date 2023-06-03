@@ -48,20 +48,28 @@
   <div class="homeImg">
   <body>
     <nav>
-      <img class="navLogo" src="img/Alive-Drip-Logo-24.png" alt="Alive Logo" />
+      <div class="nav-container">
+      <img class="navLogo" src="img/ALIVE-nobg.png" width="5%" alt="Alive Logo" />
       <a href="index.html"class="navHover" id="homeScroll">Home</a>
       <a href="#AboutAlive" class="navHover" id="aboutScroll" >About</a>
       <a href="#AliveServices" class="navHover" id="servicesScroll" >Services</a>
       <a href="#" class="navHover">Locate</a>
       <a href="pages/bookingScreen.html"><button class="navBookNow">Book Now</button></a>
-    </nav>
+      </div>
+  </nav>
 
     <div class="popup-overlay">
       <div class="popup">
         <h2>Special Offer!</h2>
-        <p>Get 10% off your first IV treatment.</p>
-        <p>Use promo code IV10 at checkout.</p>
-        <button class="close-button">Close</button>
+        <p>Get 10% off your first IV treatment when you <br/>sign up for our newsletter</p>
+  <form id="newsletterForm">
+    <input type="email" id="emailInput" placeholder="Enter your email" required>
+<button type="submit">Subscribe</button>
+
+  </form>
+  <p id="newsletterMessage"></p>
+  <button class="close-button">x</button>
+       <!-- <button class="close-button">Close</button>-->    
       </div>
     </div>
   
@@ -69,7 +77,7 @@
     <div class="wrapper">
       <div class="container">
         <div class="leftColumn">
-          <img src="img/hydrationLounge.png" alt="Alive Logo" width="25%" />
+          <div class="aliveLogoHP"> <img src="img/ALIVE-nobg.png" alt="Alive Logo" width="85%"/></div>
           <h1 class="bodyText">
             
               Bringing vitamin<br />
@@ -138,7 +146,7 @@
   <div class="about-column-box">
     
     <div class="aboutLeft-column">
-    <img src="img/Alive-Drip-Logo-24.png" alt="Alive Logo">
+    <img src="img/ALIVE-nobg.png" alt="Alive Logo" width="100%">
     </div>
     <div class="aboutRight-column">
       <h2 style="font-size: 28px;">What We Do</h2>
@@ -309,7 +317,7 @@ $(document).ready(function() {
   $('#aboutScroll').click(function() {
     $('html, body').animate({
       scrollTop: $('#section2').offset().top
-    }, 700); // 1000 milliseconds (1 second) for the scrolling animation
+    }, 1500); // 1000 milliseconds (1 second) for the scrolling animation
   });
 });
 
@@ -319,7 +327,7 @@ $(document).ready(function() {
   $('#scrollChevron').click(function() {
     $('html, body').animate({
       scrollTop: $('#section2').offset().top
-    }, 700); // 1000 milliseconds (1 second) for the scrolling animation
+    }, 1500); // 1000 milliseconds (1 second) for the scrolling animation
   });
 });
 
@@ -328,7 +336,7 @@ $(document).ready(function() {
   $('#servicesScroll').click(function() {
     $('html, body').animate({
       scrollTop: $('#servicesSection').offset().top
-    }, 1000); // 1000 milliseconds (1 second) for the scrolling animation
+    }, 2000); // 1000 milliseconds (1 second) for the scrolling animation
   });
 });
 
@@ -337,7 +345,7 @@ $(document).ready(function() {
   $('#aboutBtn').click(function() {
     $('html, body').animate({
       scrollTop: $('#servicesSection').offset().top
-    }, 1000); // 1000 milliseconds (1 second) for the scrolling animation
+    }, 1500); // 1000 milliseconds (1 second) for the scrolling animation
   });
 });
 
