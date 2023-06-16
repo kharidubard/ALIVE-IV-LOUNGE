@@ -47,9 +47,11 @@
 
   <div class="homeImg">
   <body>
+    
     <nav>
-      <div class="nav-container">
       <img class="navLogo" src="img/ALIVE-nobg.png" width="5%" alt="Alive Logo" />
+      <div class="nav-container">
+      
       <a href="index.html"class="navHover" id="homeScroll">Home</a>
       <a href="#AboutAlive" class="navHover" id="aboutScroll" >About</a>
       <a href="#AliveServices" class="navHover" id="servicesScroll" >Services</a>
@@ -77,7 +79,7 @@
     <div class="wrapper">
       <div class="container">
         <div class="leftColumn">
-          <div class="aliveLogoHP"> <img src="img/ALIVE-nobg.png" alt="Alive Logo" width="85%"/></div>
+          <div class="aliveLogoHP"> <img src="img/ALIVE-nobg.png" alt="Alive Logo" width="45%"/></div>
           <h1 class="bodyText">
             
               Bringing vitamin<br />
@@ -142,18 +144,19 @@
 <div class="aboutWrapperBG">
   <div class="aboutWrapper">
 <div class="aboutContainer">
+  <!--<h1 style="font-size: 54px;">Alive</h1>-->
     <h1 style="font-size: 54px;">About Alive</h1>
   <div class="about-column-box">
     
     <div class="aboutLeft-column">
-    <img src="img/ALIVE-nobg.png" alt="Alive Logo" width="100%">
+    <img class="aboutLogoImg" src="img/ALIVE-nobg.png" alt="Alive Logo" width="100%">
     </div>
     <div class="aboutRight-column">
       <h2 style="font-size: 28px;">What We Do</h2>
       <p style="font-size: 24px;"> We are a company that specializes in providing high-quality products 
         and services to our customers. Our team is made up of experienced professionals 
         who are passionate about what they do.
-        <a href="#"><button class="AboutBtn" id="aboutBtn">Learn about our services</button></a>
+        <button class="AboutBtn" id="aboutBtn">Learn about our services</button>
     </div>
   </div>
 
@@ -343,11 +346,15 @@ $(document).ready(function() {
 //ABOUT TO SERVICES SCROLL
 $(document).ready(function() {
   $('#aboutBtn').click(function() {
+    var offsetValue = 100; // Adjust the offset value as desired
+    var targetOffset = $('#servicesSection').offset().top - offsetValue;
+
     $('html, body').animate({
-      scrollTop: $('#servicesSection').offset().top
+      scrollTop: targetOffset
     }, 1500); // 1000 milliseconds (1 second) for the scrolling animation
   });
 });
+
 
 
 
