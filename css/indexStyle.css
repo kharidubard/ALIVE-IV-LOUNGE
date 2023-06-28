@@ -272,7 +272,7 @@ nav {
     position: absolute;
     font-size: 125px;
     margin-top: 20px;
-    margin-left: 75px;
+    margin-left: 70px;
     top: 80%; /* Position the chevron below the button */
     left: 28%; /* Position the chevron horizontally centered */
     transform: translateX(-50%);
@@ -293,7 +293,7 @@ nav {
   #popUpText {
     position: absolute;
     top: 90%;
-    left: 26%;
+    left: 26.5%;
     transform: translateX(-50%);
     transform: translateY(130%);
     font-size: 14px;
