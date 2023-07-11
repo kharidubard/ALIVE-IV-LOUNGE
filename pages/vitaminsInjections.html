@@ -1,0 +1,246 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ALive IV Therapy Lounge</title>
+    <link rel="icon" href="/img/icons/favicons/prototypeFavicon.ico">
+    <link rel="stylesheet" href="/css/vitaminsInjections.css">
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"rel="stylesheet"/>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/62f445a369.js"
+      crossorigin="anonymous">
+    </script>
+  </head>
+
+  <style>
+
+  </style>
+  
+  <a href="/pages/bookingScreen.html"><button id="bookNowScroll" class="hidden">Book Now</button></a>
+
+  <div class="homeImg">
+  <body>
+    
+    <nav>
+      <img class="navLogo" src="/img/ALIVE-nobg.png" width="5%" alt="Alive Logo" />
+      <div class="nav-container">
+      
+      <a href="index.html"class="navHover" id="homeScroll">Home</a>
+      <a href="#AboutAlive" class="navHover" id="aboutScroll" >About</a>
+      <a href="#AliveServices" class="navHover" id="servicesScroll" >Services</a>
+      <a href="#" class="navHover">Locate</a>
+      <a href="pages/bookingScreen.html"><button class="navBookNow">Book Now</button></a>
+      </div>
+  </nav>
+  
+  
+    <div class="wrapper">
+     
+          </div>
+
+         <!--Services SECTION & WRAPPER-->
+  <div id="servicesSection">
+
+<div class="newsletterSection">
+  <h2>Sign Up for Our Newsletter</h2>
+  <form id="newsletterForm">
+    <input type="email" id="emailInput" placeholder="Enter your email" required>
+<button type="submit">Subscribe</button>
+<p id="errorEmail" class="error-message"></p> <!-- Add this error message element -->
+  </form>
+  <p id="newsletterMessage"></p>
+</div>
+
+
+</div>
+
+
+<footer>
+  <div class="footer-content">
+    
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#AboutAlive" id="aboutScroll" >About</a></li>
+      <li><a href="#AliveServices" id="servicesScroll" >Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+   
+  </div>
+  <div><p>&copy; 2023 IV Lounge. All rights reserved.</p></div>
+</footer>
+
+<!--JAVASCRIPT-->
+
+
+            <!--JQUERY SCROLL EFFECTS-->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+
+  //Promotional Pop Up
+  document.addEventListener('DOMContentLoaded', () => {
+  const popupOverlay = document.querySelector('.popup-overlay');
+  const closeButton = document.querySelector('.close-button');
+  const subscribeButton = document.querySelector('#newsletterForm button[type="submit"]');
+  const errorEmail = document.querySelector('#errorEmail');
+
+  subscribeButton.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent the form from submitting
+    
+    // Add your email validation logic here
+    const email = emailInput.value;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (emailPattern.test(email)) {
+      // Valid email, hide the pop-up and clear the error message
+      popupOverlay.style.display = 'none';
+      errorEmail.textContent = ''; // Clear the error message
+    } else {
+      // Invalid email, show the error message
+      errorEmail.textContent = 'Please enter a valid email address.';
+    }
+  });
+
+  closeButton.addEventListener('click', () => {
+    popupOverlay.style.display = 'none';
+  });
+});
+
+function scrollToSection(aboutContainer) {
+  var targetElement = document.querySelector(aboutContainer);
+  if (targetElement) {
+    targetElement.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+//BOOK NOW SCROLL
+const bookNowScroll = document.getElementById('bookNowScroll');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) { // Adjust the scroll position as needed
+    bookNowScroll.classList.add('visible');
+  } else {
+    bookNowScroll.classList.remove('visible');
+  }
+});
+
+
+
+//SLIDESHOW
+      let slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 7500); // Change image every 5 seconds
+      }
+
+
+      //CHEVRON LEARN MORE HOVER SCROLL
+      const scrollChevron = document.getElementById('scrollChevron');
+const popUpText = document.getElementById('popUpText');
+let timeout;
+
+scrollChevron.addEventListener('mouseenter', () => {
+  clearTimeout(timeout);
+  timeout = setTimeout(() => {
+    popUpText.style.opacity = '1';
+    popUpText.style.visibility = 'visible';
+  }, 200); // Change the delay time here (in milliseconds)
+});
+
+scrollChevron.addEventListener('mouseleave', () => {
+  clearTimeout(timeout);
+  timeout = setTimeout(() => {
+    popUpText.style.opacity = '0';
+    popUpText.style.visibility = 'hidden';
+  }, 200); // Change the delay time here (in milliseconds)
+});
+
+
+//NAV ABOUT SCROLL
+$(document).ready(function() {
+  $('#aboutScroll').click(function() {
+    $('html, body').animate({
+      scrollTop: $('#section2').offset().top
+    }, 1500); // 1000 milliseconds (1 second) for the scrolling animation
+  });
+});
+
+
+//ABOUT CHEVRON SCROLL
+      $(document).ready(function() {
+  $('#scrollChevron').click(function() {
+    $('html, body').animate({
+      scrollTop: $('#section2').offset().top
+    }, 1500); // 1000 milliseconds (1 second) for the scrolling animation
+  });
+});
+
+//SERVICES SCROLL
+$(document).ready(function() {
+  $('#servicesScroll').click(function() {
+    $('html, body').animate({
+      scrollTop: $('#servicesSection').offset().top
+    }, 2000); // 1000 milliseconds (1 second) for the scrolling animation
+  });
+});
+
+//ABOUT TO SERVICES SCROLL
+$(document).ready(function() {
+  $('#aboutBtn').click(function() {
+    var offsetValue = 100; // Adjust the offset value as desired
+    var targetOffset = $('#servicesSection').offset().top - offsetValue;
+
+    $('html, body').animate({
+      scrollTop: targetOffset
+    }, 1500); // 1000 milliseconds (1 second) for the scrolling animation
+  });
+});
+
+
+
+
+
+//NEWSLETTER
+const newsletterForm = document.getElementById('newsletterForm');
+const emailInput = document.getElementById('emailInput');
+const newsletterMessage = document.getElementById('newsletterMessage');
+
+newsletterForm.addEventListener('submit', (e) => {
+  e.preventDefault(); // Prevent form submission
+
+  // Get the entered email
+  const email = emailInput.value;
+
+  // Perform your newsletter subscription logic here
+  // You can make an API call or handle it as per your requirements
+
+  // Display success message
+  newsletterMessage.textContent = `Thank you for subscribing!`;
+  emailInput.value = ''; // Clear the input field
+});
+
+
+
+</script>
+
+
+
+  </body>
+</html>
