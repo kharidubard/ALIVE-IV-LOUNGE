@@ -251,6 +251,7 @@ nav {
 
 
   .bodyBookNow {
+    right: 50;
     position: relative;
     margin: 50px auto 0;
     padding: 15px 30px;
@@ -277,8 +278,8 @@ nav {
     display: flex;
     position: absolute;
     font-size: 125px;
-    margin-top: 20px;
-    margin-left: 70px;
+    margin-top: 0px;
+    margin-left: 30px;
     top: 80%; /* Position the chevron below the button */
     left: 28%; /* Position the chevron horizontally centered */
     transform: translateX(-50%);
@@ -298,8 +299,8 @@ nav {
   
   #popUpText {
     position: absolute;
-    top: 90%;
-    left: 26.5%;
+    top: 88%;
+    left: 24.5%;
     transform: translateX(-50%);
     transform: translateY(130%);
     font-size: 14px;
@@ -388,7 +389,7 @@ nav {
 .about-column-box {
   display: flex;
   margin-top: 50px;
-  height: 600px;
+  height: 400px;
   background: linear-gradient(210deg, rgba(233, 233, 233, 0.9), rgba(212, 212, 212, 1));
   border-radius: 15px;
 }
@@ -406,7 +407,7 @@ nav {
 
 .aboutLeft-column img {
   margin: auto;
-  padding-left: 120px;
+  padding-left: 60px;
 }
 
 .aboutLeft-column p {
@@ -420,7 +421,7 @@ nav {
   border-bottom-right-radius: 15px;
   padding-right: 30px;
   padding-left: 30px;
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
 .aboutBtn {
@@ -445,6 +446,45 @@ nav {
   color: #ffffff;
   text-decoration: none;
 }
+
+
+.slider {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+}
+
+.slide.active {
+  display: inline;
+}
+
+/* Optional: Add navigation arrows */
+.slider-nav {
+  position: relative;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.slider-nav button {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #ccc;
+  border: none;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.slider-nav button.active {
+  background-color: #5e5e5e;
+}
+
 
 
 /*SERVICES*/

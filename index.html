@@ -152,18 +152,26 @@
     
     <div class="aboutLeft-column">
     <h1>About Alive</h1>
-    <img class="aboutLogoImg" src="img/ALIVE-nobg.png" alt="Alive Logo" width="50%">
-    <p style="font-size: 20px; text-align: left"> At Alive, we are dedicated to bringing you the best experience possible to bring you optimal health. Our mission is to serve our you safe, efficient, and the 
-      highest quality intravenous (IV) therapy solutions there is. We are here to help you feel and look your best. 
+    <img class="aboutLogoImg" src="img/ALIVE-nobg.png" alt="Alive Logo" width="70%">
+    <p style="font-size: 20px; text-align: left">
     </p>
     </div>
     <div class="aboutRight-column">
-      <!--<h2 style="font-size: 28px;">What We Do</h2>-->
-      <p style="font-size: 22px; text-align: left;" > With the direction of our Medical Director and the leadership of our founders, we assure you that we are committed 
-        to bringing you peace of mind. Our team of experienced medical professionals are passionate about providing exceptional care and supporting you 
-        every step of the way. Any concerns or question you have, our team would be more than happy to assist. Experience the difference in IV therapy with Alive.</p>
-        <button class="AboutBtn" id="aboutBtn">Learn about our services</button>
-    </div>
+      <div class="slider">
+        <div class="slide active">
+          <p style="font-size: 18px; text-align: left;" > At Alive, we are dedicated to bringing you the best experience possible to bring you optimal health. Our mission is to serve our you safe, efficient, and the 
+            highest quality intravenous (IV) therapy solutions there is. We are here to help you feel and look your best. </p>
+        </div>
+        <div class="slide">
+          <p style="font-size: 18px; text-align: left;" >With the direction of our Medical Director and the leadership of our founders, we assure you that we are committed to bringing you peace of mind. Our team of experienced 
+            medical professionals are passionate about providing exceptional care and supporting you every step of the way. Any concerns or question you have, our team would be more 
+            than happy to assist. Experience the difference in IV therapy with Alive.</p>
+        </div>
+      </div>
+      <div class="slider-nav">
+        <button class="active"></button>
+        <button class="inactive"></button>
+      </div>
   </div>
 
 
@@ -378,7 +386,99 @@ $(document).ready(function() {
   });
 });
 
+/*
+document.addEventListener("DOMContentLoaded", function() {
+  const slides = document.querySelectorAll(".slide");
+  const prevButton = document.querySelector(".prev-button");
+  const nextButton = document.querySelector(".next-button");
+  let currentSlide = 0;
 
+  function showSlide(index) {
+    slides.forEach(function(slide) {
+      slide.classList.remove("active");
+    });
+    slides[index].classList.add("active");
+  }
+
+  function goToNextSlide() {
+    currentSlide++;
+    if (currentSlide >= slides.length) {
+      currentSlide = 0;
+    }
+    showSlide(currentSlide);
+  }
+
+  function goToPrevSlide() {
+    currentSlide--;
+    if (currentSlide < 0) {
+      currentSlide = slides.length - 1;
+    }
+    showSlide(currentSlide);
+  }
+
+  nextButton.addEventListener("click", goToNextSlide);
+  prevButton.addEventListener("click", goToPrevSlide);
+  showSlide(currentSlide);
+});
+*/
+
+document.addEventListener("DOMContentLoaded", function() {
+  const slides = document.querySelectorAll(".slide");
+  const navButtons = document.querySelectorAll(".slider-nav button");
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach(function(slide) {
+      slide.classList.remove("active");
+    });
+    slides[index].classList.add("active");
+  }
+
+  function goToSlide(index) {
+    if (index >= 0 && index < slides.length) {
+      currentSlide = index;
+      showSlide(currentSlide);
+      updateNavButtons();
+    }
+  }
+
+  function updateNavButtons() {
+    navButtons.forEach(function(button, index) {
+      if (index === currentSlide) {
+        button.classList.add("active");
+      } else {
+        button.classList.remove("active");
+      }
+    });
+  }
+
+  function goToNextSlide() {
+    currentSlide++;
+    if (currentSlide >= slides.length) {
+      currentSlide = 0;
+    }
+    showSlide(currentSlide);
+    updateNavButtons();
+  }
+
+  function goToPrevSlide() {
+    currentSlide--;
+    if (currentSlide < 0) {
+      currentSlide = slides.length - 1;
+    }
+    showSlide(currentSlide);
+    updateNavButtons();
+  }
+
+  navButtons.forEach(function(button, index) {
+    button.addEventListener("click", function() {
+      goToSlide(index);
+    });
+  });
+
+  showSlide(currentSlide);
+  updateNavButtons();
+});
 
 
 
