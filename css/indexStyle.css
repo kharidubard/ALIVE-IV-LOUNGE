@@ -398,7 +398,7 @@ nav {
 
 .about-column-box {
   display: flex;
-  margin-top: 50px;
+  margin-top: 5px;
   height: 400px;
   background: linear-gradient(210deg, rgba(233, 233, 233, 0.9), rgba(212, 212, 212, 1));
   border-radius: 15px;
@@ -489,6 +489,7 @@ nav {
   border: none;
   margin: 0 4px;
   cursor: pointer;
+
 }
 
 .slider-nav button.active {
